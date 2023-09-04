@@ -5,6 +5,8 @@ const BlogSchema = new mongoose.Schema({
     category : {type:String,required:true},
     author : {type:String,required:true},
     Content : {type:String,required:true}
+},{
+    timestamps:true
 });
 
 const BlogModel = mongoose.model('blog' ,BlogSchema);
