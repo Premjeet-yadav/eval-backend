@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT || 3000;
 
 const {blog_router} = require('./routes/blog.router');
 const {authetication} = require('./middlewares/middleware')
