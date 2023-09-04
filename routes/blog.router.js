@@ -6,7 +6,7 @@ const {UserModel} = require('../models/user.model');
 
 const blog_router = Router();
 
-// get blog .....
+// get blog .
 
 blog_router.get('/',async(req,res)=>{
     const result = await BlogModel.find();

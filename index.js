@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
+const PORT = process.env.PORT 
 
 const {blog_router} = require('./routes/blog.router');
 const {authetication} = require('./middlewares/middleware')
@@ -60,7 +61,7 @@ app.post('/login',async(req,res)=>{
 })
 
 app.use("/blogs",authetication,blog_router)
-app.listen(8080,async()=>{
+app.listen(PORT,async()=>{
     try{
         await connect;
         console.log('connected successfully.....')
@@ -68,6 +69,6 @@ app.listen(8080,async()=>{
         console.log(err);
         console.log("error while connectind")
     }
-    console.log('connected att 8080');
+    console.log('connected att PORT');
 })
 
